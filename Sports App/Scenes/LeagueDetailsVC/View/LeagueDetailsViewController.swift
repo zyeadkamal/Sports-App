@@ -86,9 +86,9 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
         case nextMatchesCollectionView:
             return CGSize(width: (collectionView.frame.width - 40 ) , height: collectionView.frame.height / 3.5 )
         case leagueClubsCollectionView:
-            return CGSize(width: (collectionView.frame.width / 3 ) , height: collectionView.frame.height - 30 )
+            return CGSize(width: (collectionView.frame.width / 2 ) , height: collectionView.frame.height - 30 )
         default:
-            return CGSize(width: (collectionView.frame.width - 30 ) , height: collectionView.frame.height - 30 )
+            return CGSize(width: (collectionView.frame.width - 30 ) , height: collectionView.frame.height - 60 )
             
         }
         
