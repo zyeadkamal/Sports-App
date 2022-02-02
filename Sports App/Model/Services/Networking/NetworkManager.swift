@@ -11,10 +11,11 @@ import Alamofire
 
 class NetworkManager {
     //MARK: - properties
-    private let baseURL = "https://www.thesportsdb.com/api/v1/json/2/"
+     private let baseURL = "https://www.thesportsdb.com/api/v1/json/2/"
+     //private let key     = "/k_gfvq4g4f"
     
     //MARK: - HttpMethod
-    func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get, completion: @escaping (Swift.Result<T, Error>) -> Void) {
+     func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get, completion: @escaping (Swift.Result<T, Error>) -> Void) {
         
         let completionOnMain: (Swift.Result<T, Error>) -> Void = { result in
             DispatchQueue.main.async {

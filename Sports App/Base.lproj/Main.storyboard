@@ -154,6 +154,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="394" height="127"/>
                                 <connections>
+                                    <outlet property="leagueBadgeImage" destination="TJc-pa-E12" id="wBQ-qk-jgl"/>
+                                    <outlet property="leagueNameLebel" destination="JlF-Ow-d6E" id="F1e-WY-gNo"/>
                                     <outlet property="leagueVideoButton" destination="whz-l8-TSt" id="5rp-RR-mur"/>
                                     <segue destination="v1a-wA-xg2" kind="show" id="g4b-Gs-97Z"/>
                                 </connections>

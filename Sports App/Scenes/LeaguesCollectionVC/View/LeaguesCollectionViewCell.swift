@@ -11,9 +11,10 @@ import UIKit
 class LeaguesCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var leagueVideoButton: UIButton!
-    @IBOutlet weak var leagueButton: UIButton!
     
+    @IBOutlet weak var leagueNameLebel: UILabel!
     
+    @IBOutlet weak var leagueBadgeImage: UIImageView!
     var leagueVideoButtonPressed : (() -> Void)?
     var cornerRadius: CGFloat = 15
     
