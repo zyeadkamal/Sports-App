@@ -9,7 +9,7 @@
 import Foundation
 enum EndPoint : String {
     case allSports = "all_sports.php"
-    case allLeagues = "all_leagues.php"
+    case allLeagues = "search_all_leagues.php?c=England&s=Soccer"
     case allTeams = "search_all_teams.php"
     case upcomingEvents = "eventslast.php"
     case lastEvents     = "eventslast2.php"

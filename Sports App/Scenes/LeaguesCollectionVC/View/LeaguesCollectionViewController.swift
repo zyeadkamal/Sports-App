@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 //private let reuseIdentifier = "Cell"
 
 class LeaguesCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout {
     
+    
+    var presenter : LeaguePresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = LeaguePresenter(view: self)
         
     }
     
@@ -21,7 +27,7 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 60
+        return presenter?.getAllLeaguesCount() ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -35,6 +41,11 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         cell.layer.shadowOpacity = 0.3
         cell.layer.masksToBounds = false
         cell.leagueVideoButtonPressed = {print("video \(indexPath.row)") }
+        let url = URL(string: presenter?.getDataAtIndex(ATIndex: indexPath)?.strBadge ?? "")
+        cell.leagueBadgeImage.kf.setImage(with:url)
+        cell.leagueNameLebel.text = presenter?.getDataAtIndex(ATIndex: indexPath)?.strLeague
+        
+
         
         return cell
     }
@@ -53,5 +64,13 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("League \(indexPath.row)")
     }
+    
+}
+
+extension LeaguesCollectionViewController : ViewToPresenterDelegate{
+    func reloadCollectionViewData() {
+        self.collectionView.reloadData()
+    }
+    
     
 }

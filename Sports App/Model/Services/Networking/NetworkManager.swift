@@ -11,11 +11,11 @@ import Alamofire
 
 class NetworkManager {
     //MARK: - properties
-    private let baseURL = "https://www.thesportsdb.com/api/v1/json/2/"
-    private let key     = "/k_gfvq4g4f"
+     private let baseURL = "https://www.thesportsdb.com/api/v1/json/2/"
+     //private let key     = "/k_gfvq4g4f"
     
     //MARK: - HttpMethod
-    func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get, completion: @escaping (Swift.Result<T, Error>) -> Void) {
+     func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get, completion: @escaping (Swift.Result<T, Error>) -> Void) {
         
         let completionOnMain: (Swift.Result<T, Error>) -> Void = { result in
             DispatchQueue.main.async {
@@ -23,7 +23,7 @@ class NetworkManager {
             }
         }
         
-        guard let url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)\(key)") else {
+        guard let url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
             completionOnMain(.failure(Errors.invalidUrl))
             return
         }
