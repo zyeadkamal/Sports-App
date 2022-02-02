@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class SportCollectionViewCell: UICollectionViewCell {
     
@@ -37,5 +39,18 @@ class SportCollectionViewCell: UICollectionViewCell {
             roundedRect: bounds,
             cornerRadius: cornerRadius
         ).cgPath
+    }
+    
+    //MARK:- Configure Cell Functions
+    
+    func setSportLabel(sportName: String)
+    {
+        sportLabel.text = sportName
+    }
+    
+    func setSportImage(imgPath: String)
+    {
+        let imgUrl = URL(string: imgPath)
+        sportImage.kf.setImage(with: imgUrl)
     }
 }

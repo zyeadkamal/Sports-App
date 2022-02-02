@@ -8,22 +8,46 @@
 
 import UIKit
 
+protocol SportsViewProtocol : AnyObject
+{
+    func reloadCollectionView()
+}
 class ViewController: UIViewController {
     
+    //MARK:- Variables
+    var presenter : SportsPresenterProtocol?
+    
+    //MARK:- Outlets
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sportsCollectionView.delegate = self
         sportsCollectionView.dataSource = self
+        
+        presenter = SportsPresenter(view: self)
     }
+    
+    //MARK:- Functions
+    
+    
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SportsViewProtocol{
+    
+    //MARK:- Confromed Functions
+    func reloadCollectionView() {
+        sportsCollectionView.reloadData()
+    }
+    
+    
+    //MARK:- Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return presenter?.getSportsCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,6 +58,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.layer.shadowRadius = 4
         cell.layer.shadowOpacity = 0.3
         cell.layer.masksToBounds = false
+        
+        let sport = presenter?.getSportAt(index: indexPath.row)
+        cell.setSportLabel(sportName: sport?.strSport ?? "")
+        cell.setSportImage(imgPath: sport?.strSportThumb ?? "")
         
         return cell
     }
