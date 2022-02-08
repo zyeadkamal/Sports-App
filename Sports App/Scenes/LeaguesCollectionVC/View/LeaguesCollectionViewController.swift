@@ -18,9 +18,6 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presenter = LeaguePresenter(view: self)
-        
     }
     
     
@@ -45,7 +42,7 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         cell.leagueBadgeImage.kf.setImage(with:url)
         cell.leagueNameLebel.text = presenter?.getDataAtIndex(ATIndex: indexPath)?.strLeague
         
-
+        
         
         return cell
     }
@@ -61,16 +58,20 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         return 20
     }
     
+ 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("League \(indexPath.row)")
+        let destinationVC = self.storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: self.presenter?.getDataAtIndex(ATIndex: indexPath)?.strLeague ?? "")
+        destinationVC.presenter = presenter
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+        
+        
     }
     
 }
 
-extension LeaguesCollectionViewController : ViewToPresenterDelegate{
+extension LeaguesCollectionViewController : LeagueViewToLeaguePresenterDelegate{
     func reloadCollectionViewData() {
         self.collectionView.reloadData()
     }
-    
-    
 }

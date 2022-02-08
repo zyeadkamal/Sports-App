@@ -72,7 +72,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (sportsCollectionView.frame.width - 30 ) / 2 , height: sportsCollectionView.frame.width / 1.5)
+        return CGSize(width: (sportsCollectionView.frame.width - 30 ) / 2 , height: sportsCollectionView.frame.width / 3)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -83,7 +83,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 20
     }
     
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destinationVC = self.storyboard?.instantiateViewController(identifier: "LeaguesCollectionViewController") as! LeaguesCollectionViewController
+        let destpresenter = LeaguePresenter(view: destinationVC, APIKey: presenter?.setAPIKey(index: indexPath) ?? "")
+        destinationVC.presenter = destpresenter        
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }
 

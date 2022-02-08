@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class LeagueDetailsViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class LeagueDetailsViewController: UIViewController {
     @IBOutlet weak var nextMatchesCollectionView: UICollectionView!
     
     @IBOutlet weak var leagueClubsCollectionView: UICollectionView!
+    
+    var presenter : LeagueDetalisPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,12 +33,30 @@ class LeagueDetailsViewController: UIViewController {
         leagueClubsCollectionView.dataSource = self
     }
     
+    
+  
+    @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
+        
+        
+    }
+    
+    
 }
 
 
 extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        
+        switch collectionView {
+        case liveMatchesCollectionView:
+            return self.presenter?.getAllEventsCount() ?? 0
+        case nextMatchesCollectionView:
+            return self.presenter?.getAllEventsCount() ?? 0
+        case leagueClubsCollectionView:
+            return self.presenter?.getAllClubsCount() ?? 0
+        default:
+            return 6
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,6 +70,11 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             cell.layer.shadowRadius = 4
             cell.layer.shadowOpacity = 0.3
             cell.layer.masksToBounds = false
+            cell.homeTeamNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strHomeTeam
+            cell.hometeamScoreLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.intHomeScore
+            cell.awayTeamNameLebel.text = presenter?.getAllEvents(atIndex: indexPath)?.strAwayTeam
+            cell.awayTeamScoreLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.intAwayScore
+            cell.leagueNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strLeague
             
             return cell
         case nextMatchesCollectionView:
@@ -58,6 +85,10 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             cell.layer.shadowRadius = 4
             cell.layer.shadowOpacity = 0.3
             cell.layer.masksToBounds = false
+            cell.homeTeamNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strHomeTeam
+            cell.awayTeamNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strAwayTeam
+            cell.matchTimeLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.dateEvent
+            
             
             return cell
         case leagueClubsCollectionView:
@@ -68,6 +99,11 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             cell.layer.shadowRadius = 4
             cell.layer.shadowOpacity = 0.3
             cell.layer.masksToBounds = false
+            
+            let url = URL(string: presenter?.getAllClubs(atIndex: indexPath)?.strTeamBadge ?? "")
+            cell.clubImage.kf.setImage(with: url)
+            cell.clubNameLabel.text = presenter?.getAllClubs(atIndex: indexPath)?.strTeam
+            
             
             return cell
         default:
@@ -93,7 +129,6 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
         }
         
         
-        
     }
     
     
@@ -114,7 +149,37 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 15, left: 5, bottom: 1, right: 5)
-       }
+        return UIEdgeInsets(top: 15, left: 5, bottom: 1, right: 5)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case leagueClubsCollectionView:
+            let desVC = self.storyboard?.instantiateViewController(identifier: "ClubDetailsViewController") as! ClubDetailsViewController
+            let presenter = ClubDetailsPresenter(club: self.presenter?.getAllClubs(atIndex: indexPath) ?? Team())
+            desVC.presenter = presenter
+            self.navigationController?.pushViewController(desVC, animated: true)
+            break
+        default:
+            break
+        }
+    }
+    
+}
+
+
+extension LeagueDetailsViewController : LeagueDetailsViewToLeagueDetailsPresenterDelegate{
+    func reloadliveMatchesCollectionView() {
+        self.liveMatchesCollectionView.reloadData()
+    }
+    
+    func reloadnextMatchesCollectionView() {
+        self.nextMatchesCollectionView.reloadData()
+    }
+    
+    func reloadleagueClubsCollectionView() {
+        self.leagueClubsCollectionView.reloadData()
+    }
     
 }

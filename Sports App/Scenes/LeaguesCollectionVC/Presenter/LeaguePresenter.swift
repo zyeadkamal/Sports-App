@@ -13,35 +13,48 @@ protocol FetchingDataFromAPIProtocol {
 }
 
 protocol LeaguePresenterProtocol {
+    func attachView(view : LeagueViewToLeaguePresenterDelegate)
     func getAllLeaguesCount() -> Int
     func getDataAtIndex(ATIndex : IndexPath) -> League?
 }
 
-protocol ViewToPresenterDelegate {
+protocol LeagueViewToLeaguePresenterDelegate {
     func reloadCollectionViewData()
 }
 
-class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol {
-   
+protocol AssignAPIKey {
+    
+    var APIKey : String {get set}
+}
+
+
+
+class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,AssignAPIKey {
     
     
-    var view : ViewToPresenterDelegate?
+    var APIKey: String
+    var view : LeagueViewToLeaguePresenterDelegate
     var allLeagues : [League]?
     
-    init(view : ViewToPresenterDelegate) {
+    init(view : LeagueViewToLeaguePresenterDelegate, APIKey: String) {
         self.view = view
+        self.APIKey = APIKey
         fetchDataFromAPI()
+    }
+    
+    func attachView(view : LeagueViewToLeaguePresenterDelegate){
+        self.view = view
     }
     
     func fetchDataFromAPI(){
         
         let network = NetworkManager()
-        network.request(fromEndpoint: EndPoint.allLeagues) { [weak self] (result:Result<AllLeagues, Error>) in
+        network.request(fromEndpoint: EndPoint.allLeagues, httpMethod: .post, parametrs: ["s":APIKey]){ [weak self] (result:Result<AllLeagues, Error>) in
             
             switch result {
             case .success(let response):
-                self?.allLeagues = response.countrys
-                self?.view?.reloadCollectionViewData()
+                self?.allLeagues = response.countrys?.reversed()
+                self?.view.reloadCollectionViewData()
                 break
             case .failure(let error):
                 print(error.localizedDescription)

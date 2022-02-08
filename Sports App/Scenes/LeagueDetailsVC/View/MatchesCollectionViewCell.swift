@@ -10,6 +10,12 @@ import UIKit
 
 class MatchesCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var awayTeamNameLabel: UILabel!
+    @IBOutlet weak var awayTeamImage: UIImageView!
+    @IBOutlet weak var matchDateLabel: UILabel!
+    @IBOutlet weak var matchTimeLabel: UILabel!
+    @IBOutlet weak var homeTeamImage: UIImageView!
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
     var cornerRadius: CGFloat = 15
        
        override func awakeFromNib() {

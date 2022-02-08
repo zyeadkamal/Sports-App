@@ -47,7 +47,7 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (favouritsCollectionView.frame.width - 30 ) / 2 , height: favouritsCollectionView.frame.width / 1.5)
+        return CGSize(width: (favouritsCollectionView.frame.width - 30 ) , height: favouritsCollectionView.frame.width / 3)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

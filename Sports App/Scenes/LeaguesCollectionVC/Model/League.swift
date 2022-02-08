@@ -23,6 +23,3 @@ struct AllLeagues : Codable {
 }
 
 
-//struct Welcome: Codable {
-//    let countrys: [[String: String?]]
-//}

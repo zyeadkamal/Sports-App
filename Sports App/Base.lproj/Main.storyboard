@@ -71,7 +71,6 @@
                                         <connections>
                                             <outlet property="sportImage" destination="T0p-6v-ICa" id="XYv-pW-10l"/>
                                             <outlet property="sportLabel" destination="utn-yK-rV3" id="MwH-NE-qe3"/>
-                                            <segue destination="sZS-D8-x9f" kind="show" id="pko-t1-nbr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -98,7 +97,7 @@
         <!--Leagues-->
         <scene sceneID="k5n-bW-sDI">
             <objects>
-                <collectionViewController id="sZS-D8-x9f" customClass="LeaguesCollectionViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="LeaguesCollectionViewController" id="sZS-D8-x9f" customClass="LeaguesCollectionViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ugw-Hd-Tsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +128,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premier-league-logo-header" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-pa-E12">
                                             <rect key="frame" x="0.0" y="0.0" width="98.5" height="127"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primer League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-Ow-d6E">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primer League" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-Ow-d6E">
                                             <rect key="frame" x="106.5" y="0.0" width="220.5" height="127"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <nil key="textColor"/>
@@ -157,7 +156,6 @@
                                     <outlet property="leagueBadgeImage" destination="TJc-pa-E12" id="wBQ-qk-jgl"/>
                                     <outlet property="leagueNameLebel" destination="JlF-Ow-d6E" id="F1e-WY-gNo"/>
                                     <outlet property="leagueVideoButton" destination="whz-l8-TSt" id="5rp-RR-mur"/>
-                                    <segue destination="v1a-wA-xg2" kind="show" id="g4b-Gs-97Z"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -181,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKF-Fe-1jY">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0P-6a-9L4">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="974"/>
@@ -216,7 +214,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="338" height="267"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Statement_Graphic_PL_Pink" translatesAutoresizingMaskIntoConstraints="NO" id="DfT-4G-83t">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purpule bachground" translatesAutoresizingMaskIntoConstraints="NO" id="DfT-4G-83t">
                                                                     <rect key="frame" x="0.0" y="0.0" width="338" height="267"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premier League" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-j3-o2F">
@@ -240,7 +238,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="kC6-8T-7Yv">
                                                                     <rect key="frame" x="8" y="82" width="322" height="70"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manutd" translatesAutoresizingMaskIntoConstraints="NO" id="p2S-qg-o2T">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man utd" translatesAutoresizingMaskIntoConstraints="NO" id="p2S-qg-o2T">
                                                                             <rect key="frame" x="0.0" y="0.0" width="92" height="70"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-IP-3BT">
@@ -288,7 +286,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-hh-9QE">
                                                                     <rect key="frame" x="8" y="160" width="322" height="50"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man Utd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="cHl-Jq-ejG">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man Utd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="cHl-Jq-ejG">
                                                                             <rect key="frame" x="0.0" y="0.0" width="97.5" height="50"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,7 +310,7 @@
                                                                                 <constraint firstAttribute="trailing" secondItem="zws-2a-pHu" secondAttribute="trailing" constant="8" id="rCz-6a-oAN"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chelsea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="7TP-6B-iyl">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chelsea" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7TP-6B-iyl">
                                                                             <rect key="frame" x="224.5" y="0.0" width="97.5" height="50"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,6 +344,13 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="338" height="267"/>
                                                         <connections>
+                                                            <outlet property="awayTeamImage" destination="2SY-DC-KRf" id="MfF-yt-0xc"/>
+                                                            <outlet property="awayTeamNameLebel" destination="7TP-6B-iyl" id="tAr-gU-NVd"/>
+                                                            <outlet property="awayTeamScoreLabel" destination="1me-av-yDK" id="pcQ-0o-uoS"/>
+                                                            <outlet property="homeTeamIamge" destination="p2S-qg-o2T" id="KDo-V4-mW6"/>
+                                                            <outlet property="homeTeamNameLabel" destination="cHl-Jq-ejG" id="Tz5-dY-kR2"/>
+                                                            <outlet property="hometeamScoreLabel" destination="frw-4k-dVY" id="9TK-is-hDt"/>
+                                                            <outlet property="leagueNameLabel" destination="1r7-j3-o2F" id="VYl-40-Fyt"/>
                                                             <outlet property="scoreView" destination="2tU-8B-IUV" id="gPc-TF-2k7"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -383,7 +388,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Ov-4N-elZ">
                                                                     <rect key="frame" x="173" y="29" width="59" height="38.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRO-e5-CrY">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JRO-e5-CrY">
                                                                             <rect key="frame" x="0.0" y="0.0" width="59" height="24"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                             <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -445,6 +450,14 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="405" height="96"/>
+                                                        <connections>
+                                                            <outlet property="awayTeamImage" destination="5ZS-KZ-kbT" id="R2X-NI-aR1"/>
+                                                            <outlet property="awayTeamNameLabel" destination="LOK-8F-pnF" id="XtJ-Fz-9sx"/>
+                                                            <outlet property="homeTeamImage" destination="tHK-7x-ClL" id="FMX-n6-FeF"/>
+                                                            <outlet property="homeTeamNameLabel" destination="cMI-3S-cVm" id="fiA-Ih-QZ6"/>
+                                                            <outlet property="matchDateLabel" destination="2aC-IW-iGQ" id="cX1-pb-xx7"/>
+                                                            <outlet property="matchTimeLabel" destination="JRO-e5-CrY" id="8Jn-h6-934"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -477,7 +490,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="213" height="109"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back pink" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-I3-6r0">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ping background" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-I3-6r0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="213" height="109"/>
                                                                 </imageView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liverpool" translatesAutoresizingMaskIntoConstraints="NO" id="j4s-Jo-OZi">
@@ -509,7 +522,8 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="213" height="109"/>
                                                         <connections>
-                                                            <segue destination="PNV-gt-56G" kind="show" id="yKx-l8-enn"/>
+                                                            <outlet property="clubImage" destination="j4s-Jo-OZi" id="QE5-t8-68b"/>
+                                                            <outlet property="clubNameLabel" destination="7xt-xH-wwd" id="tBL-i8-Axr"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -558,7 +572,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ff7-pq-JDS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Primier League" id="gFw-tc-I9F"/>
+                    <navigationItem key="navigationItem" title="Primier League" id="gFw-tc-I9F">
+                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="Q2h-ps-4lt">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="favouritButtonPressed:" destination="v1a-wA-xg2" id="UiW-A5-osv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="leagueClubsCollectionView" destination="hUo-TD-D4m" id="jqq-DF-gZ3"/>
                         <outlet property="liveMatchesCollectionView" destination="CHv-Gf-YIf" id="JLb-2B-00a"/>
@@ -580,7 +601,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8a-17-MGc">
                                 <rect key="frame" x="0.0" y="-10" width="414" height="286.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Statement_Graphic_PL_Pink" translatesAutoresizingMaskIntoConstraints="NO" id="jeD-7e-Dr7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purpule bachground" translatesAutoresizingMaskIntoConstraints="NO" id="jeD-7e-Dr7">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
                                     </imageView>
                                 </subviews>
@@ -593,7 +614,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RT-dw-a9K">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-n0-VEU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="972"/>
@@ -744,18 +765,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w0b-zt-ksJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Arsenal" largeTitleDisplayMode="never" id="L9u-dF-yfb">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart.fill" catalog="system" id="Wf0-yz-Mlt">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Arsenal" largeTitleDisplayMode="never" id="L9u-dF-yfb"/>
                     <connections>
                         <outlet property="backgroundView" destination="k8a-17-MGc" id="pFO-Hj-46E"/>
                         <outlet property="clubDetailsView" destination="Xxb-4q-RVZ" id="78J-a0-J8F"/>
+                        <outlet property="clubImage" destination="aGb-xl-VgS" id="Byy-qQ-Lqx"/>
                         <outlet property="facebookLogo" destination="4dW-Jj-7Lq" id="RhR-7i-TcE"/>
+                        <outlet property="formedLabel" destination="im9-gw-H3L" id="qb5-DX-WPQ"/>
+                        <outlet property="kitImage" destination="R6c-nu-wfF" id="zc4-N8-qlO"/>
                         <outlet property="logoAndKitView" destination="Gm4-J9-ayO" id="GOh-Ar-AQU"/>
                         <outlet property="officialWebsitButton" destination="6uH-eN-aqv" id="cL0-xH-O30"/>
                         <outlet property="stadiumView" destination="aTE-OK-9xO" id="HCf-27-rej"/>
+                        <outlet property="staduimImage" destination="aTE-OK-9xO" id="WGS-Fp-9uw"/>
+                        <outlet property="staduimname" destination="bDO-8r-xYT" id="blG-PY-Uya"/>
                         <outlet property="twitterLogo" destination="AWJ-Am-MCH" id="Bkq-89-Qiy"/>
                     </connections>
                 </viewController>
@@ -788,7 +810,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="265" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-df-6v4">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arsenal" translatesAutoresizingMaskIntoConstraints="NO" id="YEk-df-6v4">
                                                     <rect key="frame" x="0.0" y="0.0" width="265" height="239"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ote-4K-cie">
@@ -825,7 +847,6 @@
                                         <connections>
                                             <outlet property="favouritsImage" destination="YEk-df-6v4" id="jKw-ct-nZf"/>
                                             <outlet property="favouritsLabel" destination="mA1-KX-SHY" id="ws8-Xi-Vco"/>
-                                            <segue destination="PNV-gt-56G" kind="show" id="3IQ-y6-PkU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -911,24 +932,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Statement_Graphic_PL_Pink" width="964" height="643"/>
         <image name="Twitter-1" width="1600" height="800"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="64" height="56"/>
         <image name="arsenal" width="870" height="1024"/>
         <image name="arsenal kit" width="1238" height="1334"/>
-        <image name="back pink" width="1320" height="743"/>
         <image name="green" width="1920" height="1080"/>
-        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="heart" catalog="system" width="64" height="54"/>
         <image name="liverpool" width="444" height="600"/>
-        <image name="manutd" width="1280" height="1297"/>
+        <image name="man utd" width="1280" height="1297"/>
         <image name="nelson-ndongala-FiQS31ztg-Y-unsplash" width="5180" height="3456"/>
         <image name="official-facebook-logo-slide" width="1200" height="675"/>
         <image name="palace" width="481" height="600"/>
+        <image name="ping background" width="1320" height="743"/>
         <image name="premier-league-logo-header" width="1392" height="783"/>
+        <image name="purpule bachground" width="964" height="643"/>
         <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
         <image name="spurs" width="1280" height="1280"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="3IQ-y6-PkU"/>
-    </inferredMetricsTieBreakers>
 </document>

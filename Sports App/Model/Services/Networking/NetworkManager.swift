@@ -10,19 +10,19 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
+    
     //MARK: - properties
      private let baseURL = "https://www.thesportsdb.com/api/v1/json/2/"
      //private let key     = "/k_gfvq4g4f"
     
     //MARK: - HttpMethod
-     func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get, completion: @escaping (Swift.Result<T, Error>) -> Void) {
+    func request<T: Decodable>(fromEndpoint: EndPoint, httpMethod: HTTPMethod = .get,parametrs : [String:String] , completion: @escaping (Swift.Result<T, Error>) -> Void) {
         
         let completionOnMain: (Swift.Result<T, Error>) -> Void = { result in
             DispatchQueue.main.async {
                 completion(result)
             }
         }
-        
         guard let url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
             completionOnMain(.failure(Errors.invalidUrl))
             return
@@ -32,8 +32,9 @@ class NetworkManager {
         
     
         
-        Alamofire.request(url, method: httpMethod, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-            
+        Alamofire.request(url, method: httpMethod, parameters: parametrs, encoding: URLEncoding(destination: .queryString), headers: nil).responseJSON { (response) in
+           
+        
             if let error = response.error {
                 completionOnMain(.failure(error))
                 return

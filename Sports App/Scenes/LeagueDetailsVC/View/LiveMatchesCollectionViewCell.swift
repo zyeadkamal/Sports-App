@@ -10,8 +10,15 @@ import UIKit
 
 class LiveMatchesCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var awayTeamScoreLabel: UILabel!
+    @IBOutlet weak var awayTeamNameLebel: UILabel!
+    @IBOutlet weak var awayTeamImage: UIImageView!
     @IBOutlet weak var scoreView: UIView!
     
+    @IBOutlet weak var hometeamScoreLabel: UILabel!
+    @IBOutlet weak var homeTeamNameLabel: UILabel!
+    @IBOutlet weak var homeTeamIamge: UIImageView!
+    @IBOutlet weak var leagueNameLabel: UILabel!
     var cornerRadius: CGFloat = 15
     
     override func awakeFromNib() {

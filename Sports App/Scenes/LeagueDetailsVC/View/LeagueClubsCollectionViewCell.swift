@@ -10,6 +10,8 @@ import UIKit
 
 class LeagueClubsCollectionViewCell: UICollectionViewCell {
  
+    @IBOutlet weak var clubNameLabel: UILabel!
+    @IBOutlet weak var clubImage: UIImageView!
     var cornerRadius: CGFloat = 15
          
          override func awakeFromNib() {
