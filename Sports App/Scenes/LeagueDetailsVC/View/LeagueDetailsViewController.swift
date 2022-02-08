@@ -19,6 +19,8 @@ class LeagueDetailsViewController: UIViewController {
     
     var presenter : LeagueDetalisPresenterProtocol?
     
+    var flag = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,10 +36,26 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     
-  
+    
     @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
         
+        switchBarButtonItem(button: sender)
         
+    }
+    
+
+    
+    func switchBarButtonItem(button : UIBarButtonItem ){
+        
+        flag = !flag
+        switch flag {
+        case true:
+            button.image = UIImage(systemName: "heart.fill")
+            break
+        case false:
+            button.image = UIImage(systemName: "heart")
+            break
+        }
     }
     
     
