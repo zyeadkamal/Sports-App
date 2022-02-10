@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNt-vc-rAp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNt-vc-rAp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -976,10 +976,11 @@
     </scenes>
     <resources>
         <image name="Twitter-1" width="1600" height="800"/>
-        <image name="arrowtriangle.right.fill" catalog="system" width="64" height="56"/>
+        <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
         <image name="arsenal" width="870" height="1024"/>
         <image name="arsenal kit" width="1238" height="1334"/>
         <image name="green" width="1920" height="1080"/>
+
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="horezontal background" width="639" height="299"/>
         <image name="liverpool" width="444" height="600"/>
@@ -990,7 +991,7 @@
         <image name="ping background" width="1320" height="743"/>
         <image name="premier-league-logo-header" width="1392" height="783"/>
         <image name="purpule bachground" width="964" height="643"/>
-        <image name="sportscourt.fill" catalog="system" width="64" height="40"/>
+        <image name="sportscourt.fill" catalog="system" width="128" height="83"/>
         <image name="spurs" width="1280" height="1280"/>
         <image name="vertical background" width="299" height="639"/>
     </resources>

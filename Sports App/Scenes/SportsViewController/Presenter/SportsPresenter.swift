@@ -18,9 +18,6 @@ protocol SportsPresenterProtocol {
 class SportsPresenter : SportsPresenterProtocol
 {
     
-    
-    
-    
     //MARK:- Variables
     var sports : [Sport] = []
     weak var view   : SportsViewProtocol?

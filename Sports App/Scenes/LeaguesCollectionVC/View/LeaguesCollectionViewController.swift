@@ -87,10 +87,12 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destinationVC = self.storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
-        let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: self.presenter?.getDataAtIndex(ATIndex: indexPath)?.strLeague ?? "")
+        let tmpObject : League = presenter?.getDataAtIndex(ATIndex: indexPath) ?? League()
+        
+        let leagueToBeSent = FavoriteLeague(strLeague: tmpObject.strLeague, strBadge: tmpObject.strBadge, strYoutube: tmpObject.strYoutube, isFavorite: presenter?.getFlag(tmpObject.strLeague ?? ""))
+        let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: leagueToBeSent)
         destinationVC.presenter = presenter
         self.navigationController?.pushViewController(destinationVC, animated: true)
-        
         
     }
     
