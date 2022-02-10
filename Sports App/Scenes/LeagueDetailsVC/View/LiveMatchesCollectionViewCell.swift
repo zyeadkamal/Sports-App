@@ -10,11 +10,11 @@ import UIKit
 
 class LiveMatchesCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var awayTeamScoreLabel: UILabel!
     @IBOutlet weak var awayTeamNameLebel: UILabel!
     @IBOutlet weak var awayTeamImage: UIImageView!
     @IBOutlet weak var scoreView: UIView!
-    
     @IBOutlet weak var hometeamScoreLabel: UILabel!
     @IBOutlet weak var homeTeamNameLabel: UILabel!
     @IBOutlet weak var homeTeamIamge: UIImageView!

@@ -61,6 +61,9 @@ class LeagueDetailsViewController: UIViewController {
     
     func switchBarButtonItem(button : UIBarButtonItem ){
         
+
+        
+        flag = !flag
         switch flag {
         case true:
             presenter?.deleteFromDatabase(!flag)
@@ -109,6 +112,7 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             cell.awayTeamNameLebel.text = presenter?.getAllEvents(atIndex: indexPath)?.strAwayTeam
             cell.awayTeamScoreLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.intAwayScore
             cell.leagueNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strLeague
+            cell.roundLabel.text = "Week \(presenter?.getAllEvents(atIndex: indexPath)?.intRound ?? "2")"
             
             return cell
         case nextMatchesCollectionView:

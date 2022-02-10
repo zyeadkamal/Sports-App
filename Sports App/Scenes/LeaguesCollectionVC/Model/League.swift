@@ -16,6 +16,8 @@ struct League : Codable {
     var strYoutube : String?
 //      var strTwitter, strYoutube, strDescriptionEN: String?
     var strBadge: String?
+//       var strTwitter, strYoutube, strDescriptionEN: String?
+//       var strBadge: String?
      
 }
 

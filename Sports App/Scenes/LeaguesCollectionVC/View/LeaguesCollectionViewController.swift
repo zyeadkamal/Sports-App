@@ -9,7 +9,6 @@
 import UIKit
 import Kingfisher
 
-//private let reuseIdentifier = "Cell"
 
 class LeaguesCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout {
     
@@ -19,6 +18,33 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: Functions
+    
+    func openURL(_ urlString: String) {
+        
+        if urlString == "https://"{
+            showAlert()
+        }else{
+            guard let url = URL(string: urlString) else {return}
+            UIApplication.shared.open(url, completionHandler: { success in
+                if success {
+                    print("opened")
+                } else {
+                    print("failed")
+                }
+            })
+        }
+    }
+    
+    
+    func showAlert(){
+        
+        let alert = UIAlertController(title: "Sorry", message: "There is no YouTube link for this content", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     
     // MARK: UICollectionViewDataSource
@@ -37,7 +63,7 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         cell.layer.shadowRadius = 4
         cell.layer.shadowOpacity = 0.3
         cell.layer.masksToBounds = false
-        cell.leagueVideoButtonPressed = {print("video \(indexPath.row)") }
+        cell.leagueVideoButtonPressed = { self.openURL("https://\(self.presenter?.getDataAtIndex(ATIndex: indexPath)?.strYoutube ?? "")")}
         let url = URL(string: presenter?.getDataAtIndex(ATIndex: indexPath)?.strBadge ?? "")
         cell.leagueBadgeImage.kf.setImage(with:url)
         cell.leagueNameLebel.text = presenter?.getDataAtIndex(ATIndex: indexPath)?.strLeague
@@ -58,7 +84,7 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         return 20
     }
     
- 
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destinationVC = self.storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         let tmpObject : League = presenter?.getDataAtIndex(ATIndex: indexPath) ?? League()
@@ -69,6 +95,10 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         self.navigationController?.pushViewController(destinationVC, animated: true)
         
     }
+    
+    
+    
+    
     
 }
 
