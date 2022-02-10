@@ -27,12 +27,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         sportsCollectionView.delegate = self
         sportsCollectionView.dataSource = self
-        
         presenter = SportsPresenter(view: self)
+        
     }
-    
-    //MARK:- Functions
-    
     
 }
 

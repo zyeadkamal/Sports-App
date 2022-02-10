@@ -71,4 +71,5 @@ class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,Assi
         guard let allLegues = allLeagues else {return nil}
         return allLegues[ATIndex.row]
        }
+    
 }

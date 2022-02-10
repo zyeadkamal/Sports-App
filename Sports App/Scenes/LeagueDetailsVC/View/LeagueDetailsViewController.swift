@@ -38,6 +38,7 @@ class LeagueDetailsViewController: UIViewController {
     @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
         
         
+        
     }
     
     
@@ -75,6 +76,7 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             cell.awayTeamNameLebel.text = presenter?.getAllEvents(atIndex: indexPath)?.strAwayTeam
             cell.awayTeamScoreLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.intAwayScore
             cell.leagueNameLabel.text = presenter?.getAllEvents(atIndex: indexPath)?.strLeague
+            cell.roundLabel.text = "Week \(presenter?.getAllEvents(atIndex: indexPath)?.intRound ?? "2")"
             
             return cell
         case nextMatchesCollectionView:

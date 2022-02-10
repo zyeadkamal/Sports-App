@@ -13,7 +13,7 @@ struct League : Codable {
       var strLeague: String?
       //var dateFirstEvent, strGender, strCountry, strWebsite: String?
 //      var strFacebook: String?
-//      var strTwitter, strYoutube, strDescriptionEN: String?
+      var strTwitter, strYoutube, strDescriptionEN: String?
       var strBadge: String?
      
 }
