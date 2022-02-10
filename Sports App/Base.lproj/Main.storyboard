@@ -598,7 +598,7 @@
                         <viewLayoutGuide key="safeArea" id="Ff7-pq-JDS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Primier League" id="gFw-tc-I9F">
-                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="Q2h-ps-4lt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="Q2h-ps-4lt">
                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="favouritButtonPressed:" destination="v1a-wA-xg2" id="UiW-A5-osv"/>
@@ -647,6 +647,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-J9-ayO">
                                                 <rect key="frame" x="32" y="32" width="350" height="200"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horezontal background" translatesAutoresizingMaskIntoConstraints="NO" id="L9F-kx-Uzf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="200"/>
+                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arsenal" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-xl-VgS">
                                                         <rect key="frame" x="0.0" y="24" width="350" height="100"/>
                                                         <constraints>
@@ -669,14 +672,21 @@
                                                     <constraint firstAttribute="trailing" secondItem="im9-gw-H3L" secondAttribute="trailing" id="1rl-Iq-sNk"/>
                                                     <constraint firstItem="im9-gw-H3L" firstAttribute="top" secondItem="aGb-xl-VgS" secondAttribute="bottom" constant="32" id="9so-qh-Qka"/>
                                                     <constraint firstAttribute="trailing" secondItem="aGb-xl-VgS" secondAttribute="trailing" id="J5C-1F-dMu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="L9F-kx-Uzf" secondAttribute="trailing" id="OeK-Aa-DSO"/>
                                                     <constraint firstAttribute="height" constant="200" id="W8g-qD-CK4"/>
                                                     <constraint firstItem="aGb-xl-VgS" firstAttribute="top" secondItem="Gm4-J9-ayO" secondAttribute="top" constant="24" id="bTe-np-8g5"/>
+                                                    <constraint firstItem="L9F-kx-Uzf" firstAttribute="leading" secondItem="Gm4-J9-ayO" secondAttribute="leading" id="fd0-NW-69N"/>
+                                                    <constraint firstItem="L9F-kx-Uzf" firstAttribute="top" secondItem="Gm4-J9-ayO" secondAttribute="top" id="gjh-9W-efM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="L9F-kx-Uzf" secondAttribute="bottom" id="pTZ-61-leL"/>
                                                     <constraint firstItem="im9-gw-H3L" firstAttribute="leading" secondItem="Gm4-J9-ayO" secondAttribute="leading" id="wni-X5-nBa"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxb-4q-RVZ">
                                                 <rect key="frame" x="32" y="264" width="350" height="700"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical background" translatesAutoresizingMaskIntoConstraints="NO" id="vUH-dF-OgQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="700"/>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Kit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-uf-3tU">
                                                         <rect key="frame" x="121.5" y="40" width="107.5" height="50"/>
                                                         <constraints>
@@ -735,6 +745,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="vUH-dF-OgQ" firstAttribute="leading" secondItem="Xxb-4q-RVZ" secondAttribute="leading" id="3wZ-K5-WLW"/>
                                                     <constraint firstAttribute="trailing" secondItem="R6c-nu-wfF" secondAttribute="trailing" constant="100" id="4aj-Te-JdS"/>
                                                     <constraint firstItem="aTE-OK-9xO" firstAttribute="leading" secondItem="Xxb-4q-RVZ" secondAttribute="leading" constant="55" id="7MM-oN-CkX"/>
                                                     <constraint firstAttribute="trailing" secondItem="aTE-OK-9xO" secondAttribute="trailing" constant="55" id="8K0-GH-qfy"/>
@@ -748,7 +759,10 @@
                                                     <constraint firstItem="bDO-8r-xYT" firstAttribute="leading" secondItem="Xxb-4q-RVZ" secondAttribute="leading" id="Uml-TK-WP1"/>
                                                     <constraint firstItem="g9e-uf-3tU" firstAttribute="top" secondItem="Xxb-4q-RVZ" secondAttribute="top" constant="40" id="WU2-z2-qmT"/>
                                                     <constraint firstItem="6uH-eN-aqv" firstAttribute="top" secondItem="aTE-OK-9xO" secondAttribute="bottom" constant="32" id="YA9-1N-FSx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vUH-dF-OgQ" secondAttribute="trailing" id="dNr-ua-WQQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vUH-dF-OgQ" secondAttribute="bottom" id="g5C-sB-ExJ"/>
                                                     <constraint firstItem="dXn-6R-7CL" firstAttribute="top" secondItem="6uH-eN-aqv" secondAttribute="bottom" constant="32" id="kgl-LP-YUc"/>
+                                                    <constraint firstItem="vUH-dF-OgQ" firstAttribute="top" secondItem="Xxb-4q-RVZ" secondAttribute="top" id="nEM-O1-nX4"/>
                                                     <constraint firstItem="R6c-nu-wfF" firstAttribute="leading" secondItem="Xxb-4q-RVZ" secondAttribute="leading" constant="100" id="s2G-n8-MdT"/>
                                                     <constraint firstAttribute="height" constant="700" id="vsD-Hr-W2b"/>
                                                     <constraint firstItem="dXn-6R-7CL" firstAttribute="leading" secondItem="Xxb-4q-RVZ" secondAttribute="leading" constant="100" id="vzG-oN-pCi"/>
@@ -967,6 +981,7 @@
         <image name="arsenal kit" width="1238" height="1334"/>
         <image name="green" width="1920" height="1080"/>
         <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="horezontal background" width="639" height="299"/>
         <image name="liverpool" width="444" height="600"/>
         <image name="man utd" width="1280" height="1297"/>
         <image name="nelson-ndongala-FiQS31ztg-Y-unsplash" width="5180" height="3456"/>
