@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol LeagueDetailsViewToLeagueDetailsPresenterDelegate {
     func reloadliveMatchesCollectionView()
@@ -17,28 +18,40 @@ protocol LeagueDetailsViewToLeagueDetailsPresenterDelegate {
 
 
 protocol LeagueDetalisPresenterProtocol {
+    func addToDatabase(_ _flag : Bool)
+    func deleteFromDatabase(_ _flag : Bool)
     func getAllEventsCount() -> Int
     func getAllEvents(atIndex : IndexPath) -> Event?
     func getAllClubsCount() -> Int
     func getAllClubs(atIndex : IndexPath) -> Team?
+    func getFlag() -> Bool
     
 }
+protocol AssignFavoritesAPIKey
+{
+    var APIKey : FavoriteLeague {get set}
+}
 
-class LeagueDetalisPresenter : AssignAPIKey {
+class LeagueDetalisPresenter : AssignFavoritesAPIKey {
     
-    
-    var APIKey: String
+    // MARK:- Variables
+    var APIKey: FavoriteLeague
+    var dbService : DBManager?
     var allEvents : [Event]?
     var allTeams : [Team]?
     var view : LeagueDetailsViewToLeagueDetailsPresenterDelegate
     
-    init(view : LeagueDetailsViewToLeagueDetailsPresenterDelegate , APIKey : String) {
+    
+    // MARK:- Initialization
+    init(view : LeagueDetailsViewToLeagueDetailsPresenterDelegate , APIKey : FavoriteLeague) {
+        self.dbService = CoreDataService()
         self.view = view
         self.APIKey = APIKey
         fetchEventsDataFromAPI()
         fetchClubsDataFromAPI()
     }
     
+    // MARK:- Functions
     func fetchEventsDataFromAPI(){
         let network = NetworkManager()
         network.request(fromEndpoint: EndPoint.events, parametrs: [:]) { [weak self ](result: Result<AllEvents, Error>) in
@@ -57,7 +70,7 @@ class LeagueDetalisPresenter : AssignAPIKey {
     
     func fetchClubsDataFromAPI(){
         let network = NetworkManager()
-        network.request(fromEndpoint: EndPoint.allTeams, parametrs: ["l":APIKey]) { [weak self ](result: Result<ListOfTeams, Error>) in
+        network.request(fromEndpoint: EndPoint.allTeams, parametrs: ["l":APIKey.strLeague ?? ""]) { [weak self ](result: Result<ListOfTeams, Error>) in
             switch result {
             case .success(let response):
                 self?.allTeams = response.teams
@@ -70,10 +83,13 @@ class LeagueDetalisPresenter : AssignAPIKey {
         }
     }
     
+    
 }
 
 
 extension LeagueDetalisPresenter: LeagueDetalisPresenterProtocol {
+    
+    
     func getAllClubsCount() -> Int {
         return self.allTeams?.count ?? 0
         
@@ -94,5 +110,18 @@ extension LeagueDetalisPresenter: LeagueDetalisPresenterProtocol {
         
     }
     
+    func addToDatabase(_ _flag : Bool) {
+        APIKey.isFavorite = _flag
+        dbService?.add(APIKey)
+    }
+    func deleteFromDatabase(_ _flag : Bool)
+    {
+        APIKey.isFavorite = _flag
+        guard let objToBeDeleted = dbService?.query(APIKey.strLeague ?? "") else { print ("m3lsh"); return }
+        dbService?.erase(objToBeDeleted)
+    }
     
+    func getFlag() -> Bool {
+        return APIKey.isFavorite ?? false
+    }
 }

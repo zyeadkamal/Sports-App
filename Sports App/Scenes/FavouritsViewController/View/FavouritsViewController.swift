@@ -8,23 +8,43 @@
 
 import UIKit
 
+
+protocol FavoritesViewProtocol
+{
+    func reloadCollectionView()
+}
+
+
 class FavouritsViewController: UIViewController {
     
+    //MARK:- Variables
+    var presenter : FavoritesPresenterProtocol?
+    
+    //MARK:- Outlets
     @IBOutlet weak var favouritsCollectionView: UICollectionView!
     
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         favouritsCollectionView.delegate = self
         favouritsCollectionView.dataSource = self
+        //presenter = FavoritesPresenter(view : self)
+        //reloadCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter = FavoritesPresenter(view : self)
+        reloadCollectionView()
     }
 }
 
 
-extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, FavoritesViewProtocol{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return presenter?.getLeaguesCount() ?? 6
         
     }
     
@@ -38,6 +58,7 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.layer.shadowOpacity = 0.3
         cell.layer.masksToBounds = false
         
+        cell.configure(presenter?.getLeagueAt(index: indexPath.row) ?? FavoriteLeague())
         return cell
     }
     
@@ -59,7 +80,10 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     
-    
+    func reloadCollectionView()
+    {
+        favouritsCollectionView.reloadData()
+    }
     
     
 }

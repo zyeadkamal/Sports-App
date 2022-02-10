@@ -38,4 +38,19 @@ class FavouritsCollectionViewCell: UICollectionViewCell {
             cornerRadius: cornerRadius
         ).cgPath
     }
+    
+    func configure(_ obj : FavoriteLeague)
+    {
+        setLeagueImage(imgPath: obj.strBadge ?? "")
+        setLeagueLabel(leagueName: obj.strLeague ?? "")
+    }
+    func setLeagueImage(imgPath : String)
+    {
+        let imgUrl = URL(string: imgPath)
+        favouritsImage.kf.setImage(with: imgUrl)
+    }
+    func setLeagueLabel(leagueName : String)
+    {
+        favouritsLabel.text = leagueName
+    }
 }

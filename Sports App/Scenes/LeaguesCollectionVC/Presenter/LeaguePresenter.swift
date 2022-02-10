@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol FetchingDataFromAPIProtocol {
         func fetchDataFromAPI()
@@ -16,6 +17,7 @@ protocol LeaguePresenterProtocol {
     func attachView(view : LeagueViewToLeaguePresenterDelegate)
     func getAllLeaguesCount() -> Int
     func getDataAtIndex(ATIndex : IndexPath) -> League?
+    func getFlag(_ leagueName : String) -> Bool
 }
 
 protocol LeagueViewToLeaguePresenterDelegate {
@@ -34,11 +36,13 @@ class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,Assi
     
     var APIKey: String
     var view : LeagueViewToLeaguePresenterDelegate
+    var dbService : DBManager?
     var allLeagues : [League]?
     
     init(view : LeagueViewToLeaguePresenterDelegate, APIKey: String) {
         self.view = view
         self.APIKey = APIKey
+        self.dbService = CoreDataService()
         fetchDataFromAPI()
     }
     
@@ -70,5 +74,11 @@ class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,Assi
     func getDataAtIndex(ATIndex: IndexPath) -> League? {
         guard let allLegues = allLeagues else {return nil}
         return allLegues[ATIndex.row]
-       }
+    }
+    func getFlag(_ leagueName : String) -> Bool {
+        let tmpNSManagedObject = dbService?.query(leagueName)
+        guard let ret = (tmpNSManagedObject?.value(forKey: "isFavorite"))
+            else {return false}
+        return ret as! Bool
+    }
 }

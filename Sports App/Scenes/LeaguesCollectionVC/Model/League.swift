@@ -10,11 +10,12 @@ import Foundation
 struct League : Codable {
     
       //var idLeague: String?
-      var strLeague: String?
+    var strLeague: String?
       //var dateFirstEvent, strGender, strCountry, strWebsite: String?
 //      var strFacebook: String?
+    var strYoutube : String?
 //      var strTwitter, strYoutube, strDescriptionEN: String?
-      var strBadge: String?
+    var strBadge: String?
      
 }
 

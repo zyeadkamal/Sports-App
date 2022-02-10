@@ -19,7 +19,7 @@ class LeagueDetailsViewController: UIViewController {
     
     var presenter : LeagueDetalisPresenterProtocol?
     
-    var flag = false
+    var flag : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,13 @@ class LeagueDetailsViewController: UIViewController {
         
         leagueClubsCollectionView.delegate = self
         leagueClubsCollectionView.dataSource = self
+        flag = presenter?.getFlag() ?? false
+        configureUI()
+        
+        
     }
     
-    
+
     
     @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -43,17 +47,29 @@ class LeagueDetailsViewController: UIViewController {
         
     }
     
-
+    func configureUI()
+    {
+        if (flag)
+        {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+        }
+        else
+        {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+        }
+    }
     
     func switchBarButtonItem(button : UIBarButtonItem ){
         
-        flag = !flag
         switch flag {
         case true:
-            button.image = UIImage(systemName: "heart.fill")
+            presenter?.deleteFromDatabase(!flag)
+            button.image = UIImage(systemName: "heart")
             break
         case false:
-            button.image = UIImage(systemName: "heart")
+            
+            presenter?.addToDatabase(!flag)
+            button.image = UIImage(systemName: "heart.fill")
             break
         }
     }
