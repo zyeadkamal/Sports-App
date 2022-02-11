@@ -69,6 +69,7 @@ class CoreDataService : DBManager
             print(error.localizedDescription)
         }
     }
+    
     func query(_ queryStr : String) -> NSManagedObject?
     {
         let req = NSFetchRequest<NSManagedObject>(entityName: "FavoriteLeagues")

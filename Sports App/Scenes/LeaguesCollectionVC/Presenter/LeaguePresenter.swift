@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 protocol FetchingDataFromAPIProtocol {
-        func fetchDataFromAPI()
+    func fetchDataFromAPI()
 }
 
 protocol LeaguePresenterProtocol {
@@ -66,7 +66,7 @@ class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,Assi
             }
         }
     }
-
+    
     func getAllLeaguesCount()-> Int{
         return allLeagues?.count ?? 0
     }
@@ -81,6 +81,6 @@ class LeaguePresenter : FetchingDataFromAPIProtocol,LeaguePresenterProtocol,Assi
             else {return false}
         return ret as! Bool
     }
-       }
-    
 }
+
+
