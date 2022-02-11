@@ -38,6 +38,11 @@
                BlueprintName = "SportsAppTests"
                ReferencedContainer = "container:Sports App.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SportsAppTests/testPerformanceExample()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

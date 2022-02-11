@@ -12,7 +12,6 @@
 		0409607E27A748A90049E18D /* MatchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409607D27A748A90049E18D /* MatchesCollectionViewCell.swift */; };
 		0409608027A74B360049E18D /* LeagueClubsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409607F27A74B360049E18D /* LeagueClubsCollectionViewCell.swift */; };
 		0416890027A601FB00276A3E /* FavouritsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041688FF27A601FB00276A3E /* FavouritsCollectionViewCell.swift */; };
-		0420C62F27B56A5D000FF051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0420C62E27B56A5C000FF051 /* Assets.xcassets */; };
 		0441D52E27B6AC3F00D28238 /* SportsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441D52D27B6AC3F00D28238 /* SportsAppTests.swift */; };
 		044D7B5E27A7774D00D78C53 /* ClubDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044D7B5D27A7774D00D78C53 /* ClubDetailsStoryboard.storyboard */; };
 		0458C43E27A5FFC000A53F13 /* FavouritsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C43D27A5FFC000A53F13 /* FavouritsViewController.swift */; };
@@ -37,6 +36,7 @@
 		04FC89D527AB1942005F625E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC89D427AB1942005F625E /* Errors.swift */; };
 		04FC89D727AB194F005F625E /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC89D627AB194F005F625E /* EndPoints.swift */; };
 		63645496838C12E838C398CC /* Pods_Sports_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DF717B425AA729979946B /* Pods_Sports_App.framework */; };
+		F75D0CAE27B6AE3600B14872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75D0CAD27B6AE3600B14872 /* Assets.xcassets */; };
 		F762D23B27AB22FA002D8554 /* SportsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762D23A27AB22FA002D8554 /* SportsPresenter.swift */; };
 		F762D23D27AB2361002D8554 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762D23C27AB2361002D8554 /* Sport.swift */; };
 		F762D24027AB26C2002D8554 /* AllSportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762D23F27AB26C2002D8554 /* AllSportsResponse.swift */; };
@@ -62,7 +62,6 @@
 		0409607D27A748A90049E18D /* MatchesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCollectionViewCell.swift; sourceTree = "<group>"; };
 		0409607F27A74B360049E18D /* LeagueClubsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueClubsCollectionViewCell.swift; sourceTree = "<group>"; };
 		041688FF27A601FB00276A3E /* FavouritsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsCollectionViewCell.swift; sourceTree = "<group>"; };
-		0420C62E27B56A5C000FF051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Unit Test/Lec 1/Lab /DogYears/Resources/Assets.xcassets"; sourceTree = "<group>"; };
 		0441D52B27B6AC3F00D28238 /* SportsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0441D52D27B6AC3F00D28238 /* SportsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsAppTests.swift; sourceTree = "<group>"; };
 		0441D52F27B6AC3F00D28238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		0F262F7CCC858112FAB6546D /* Pods-Sports App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.debug.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.debug.xcconfig"; sourceTree = "<group>"; };
 		401DF717B425AA729979946B /* Pods_Sports_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sports_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590872AB4FCD9F18EEA4A90B /* Pods-Sports App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.release.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.release.xcconfig"; sourceTree = "<group>"; };
+		F75D0CAD27B6AE3600B14872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../UnitTesting Lab1/OneDrive_1_02-02-2022/DogYears/Resources/Assets.xcassets"; sourceTree = "<group>"; };
 		F762D23A27AB22FA002D8554 /* SportsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPresenter.swift; sourceTree = "<group>"; };
 		F762D23C27AB2361002D8554 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		F762D23F27AB26C2002D8554 /* AllSportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSportsResponse.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 				04914F5727A5C80F00B61F7A /* Info.plist */,
 				04914F5427A5C80F00B61F7A /* LaunchScreen.storyboard */,
 				04914F4C27A5C80D00B61F7A /* Main.storyboard */,
-				0420C62E27B56A5C000FF051 /* Assets.xcassets */,
+				F75D0CAD27B6AE3600B14872 /* Assets.xcassets */,
 				044D7B5D27A7774D00D78C53 /* ClubDetailsStoryboard.storyboard */,
 				04914F4F27A5C80D00B61F7A /* Sports_App.xcdatamodeld */,
 			);
@@ -479,7 +479,7 @@
 				044D7B5E27A7774D00D78C53 /* ClubDetailsStoryboard.storyboard in Resources */,
 				04914F5627A5C80F00B61F7A /* LaunchScreen.storyboard in Resources */,
 				04914F4E27A5C80D00B61F7A /* Main.storyboard in Resources */,
-				0420C62F27B56A5D000FF051 /* Assets.xcassets in Resources */,
+				F75D0CAE27B6AE3600B14872 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
