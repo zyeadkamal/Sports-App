@@ -124,7 +124,6 @@
 		0409607727A740A60049E18D /* LeagueDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
-				048392F827B1D2B900B9260E /* Model */,
 				048392F527B1D19F00B9260E /* Presenter */,
 				0409607827A740B70049E18D /* View */,
 			);
@@ -160,16 +159,12 @@
 			path = SportsAppTests;
 			sourceTree = "<group>";
 		};
-		0452B43927ABE1CC0099E26A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0458C43827A5FF3B00A53F13 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				045BDE9527AB29B300C5291D /* League.swift */,
+				048392F927B1D32A00B9260E /* Event.swift */,
+				048392FB27B1F6E800B9260E /* Team.swift */,
 				F7A5E40E27B46A0900BB96AE /* FavoriteLeague.swift */,
 				F762D23C27AB2361002D8554 /* Sport.swift */,
 				F762D23F27AB26C2002D8554 /* AllSportsResponse.swift */,
@@ -193,7 +188,6 @@
 		0458C43A27A5FF6600A53F13 /* SportsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0452B43927ABE1CC0099E26A /* Model */,
 				F762D23927AB22DB002D8554 /* Presenter */,
 				0458C43B27A5FF7B00A53F13 /* View */,
 			);
@@ -235,29 +229,12 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		045BDE9427AB20CB00C5291D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				045BDE9527AB29B300C5291D /* League.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		048392F527B1D19F00B9260E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				048392F627B1D1BB00B9260E /* LeagueDetalisPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		048392F827B1D2B900B9260E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				048392F927B1D32A00B9260E /* Event.swift */,
-				048392FB27B1F6E800B9260E /* Team.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		048392FD27B1FBA200B9260E /* View */ = {
@@ -279,7 +256,6 @@
 		048F7C7427A6B20E00C5DC48 /* LeaguesCollectionVC */ = {
 			isa = PBXGroup;
 			children = (
-				045BDE9427AB20CB00C5291D /* Model */,
 				045BDE9127AB1FEF00C5291D /* Presenter */,
 				048F7C7527A6B22100C5DC48 /* View */,
 			);

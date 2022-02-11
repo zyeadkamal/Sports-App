@@ -184,7 +184,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpg-bE-Rf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263.768115942029" y="2495.7589285714284"/>
+            <point key="canvasLocation" x="2270" y="2547"/>
         </scene>
         <!--Primier League-->
         <scene sceneID="zFL-kj-poH">
@@ -198,14 +198,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0P-6a-9L4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1014"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical background" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-Kh-smo">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1006"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1014"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIP-Pl-4zW">
-                                                <rect key="frame" x="24" y="40" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="48" width="366" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="kZW-AI-uYD"/>
                                                 </constraints>
@@ -214,9 +214,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZZ-k2-Ptq">
-                                                <rect key="frame" x="354" y="40" width="60" height="50"/>
+                                                <rect key="frame" x="346" y="4" width="60" height="70"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="L2i-S1-VpJ"/>
+                                                    <constraint firstAttribute="width" constant="60" id="MIk-HR-Drm"/>
+                                                    <constraint firstAttribute="height" constant="70" id="R3v-u9-2pS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,7 +229,7 @@
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CHv-Gf-YIf">
-                                                <rect key="frame" x="0.0" y="90" width="414" height="300"/>
+                                                <rect key="frame" x="0.0" y="98" width="414" height="300"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="Poq-wi-B5p"/>
@@ -391,7 +392,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyP-eO-mSZ">
-                                                <rect key="frame" x="24" y="398" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="406" width="366" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ToE-ej-761"/>
@@ -401,7 +402,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tLT-Ue-HKl">
-                                                <rect key="frame" x="0.0" y="448" width="414" height="300"/>
+                                                <rect key="frame" x="0.0" y="456" width="414" height="300"/>
                                                 <color key="backgroundColor" red="0.96852236989999996" green="0.96868795159999999" blue="0.96851199870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="Ac9-kR-qiv"/>
@@ -501,7 +502,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Clubs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywG-I7-2jm">
-                                                <rect key="frame" x="24" y="756" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="764" width="366" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="iM3-kU-rwW"/>
                                                 </constraints>
@@ -510,7 +511,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-TD-D4m">
-                                                <rect key="frame" x="0.0" y="806" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="814" width="414" height="200"/>
                                                 <color key="backgroundColor" red="0.96852236989999996" green="0.96868795159999999" blue="0.96851199870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="JBw-To-SsG"/>
@@ -571,11 +572,28 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-yu-HQt">
+                                                <rect key="frame" x="8" y="0.0" width="90" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="De0-ub-jPx"/>
+                                                    <constraint firstAttribute="height" constant="70" id="XY5-RW-BYX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title=" leagues" image="chevron.left" catalog="system">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="v1a-wA-xg2" eventType="touchUpInside" id="YWc-hM-1wZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96852236989999996" green="0.96868795159999999" blue="0.96851199870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="hUo-TD-D4m" secondAttribute="bottom" id="2cl-hi-ha5"/>
+                                            <constraint firstItem="lfJ-yu-HQt" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" constant="8" id="2gh-kg-GxD"/>
                                             <constraint firstItem="uIP-Pl-4zW" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" constant="24" id="5V7-g9-tBc"/>
+                                            <constraint firstItem="lfJ-yu-HQt" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" id="6gz-jE-gj9"/>
                                             <constraint firstItem="hUo-TD-D4m" firstAttribute="top" secondItem="ywG-I7-2jm" secondAttribute="bottom" id="83l-7N-iFk"/>
                                             <constraint firstAttribute="trailing" secondItem="hUo-TD-D4m" secondAttribute="trailing" id="8pb-a0-DPz"/>
                                             <constraint firstItem="hUo-TD-D4m" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" id="8sP-nE-LvN"/>
@@ -585,15 +603,14 @@
                                             <constraint firstAttribute="bottom" secondItem="CGh-Kh-smo" secondAttribute="bottom" id="C6p-1U-0Y1"/>
                                             <constraint firstItem="CGh-Kh-smo" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" id="Czq-yQ-7RL"/>
                                             <constraint firstAttribute="trailing" secondItem="uIP-Pl-4zW" secondAttribute="trailing" constant="24" id="DTt-5i-Af3"/>
+                                            <constraint firstItem="ZZZ-k2-Ptq" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" constant="4" id="GAt-g6-m53"/>
                                             <constraint firstItem="ywG-I7-2jm" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" constant="24" id="HR9-s4-rqq"/>
-                                            <constraint firstItem="CHv-Gf-YIf" firstAttribute="top" secondItem="ZZZ-k2-Ptq" secondAttribute="bottom" id="MVx-QL-kRE"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZZZ-k2-Ptq" secondAttribute="trailing" id="MyI-1U-0us"/>
                                             <constraint firstItem="tLT-Ue-HKl" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" id="OZ0-1B-Tv3"/>
                                             <constraint firstAttribute="trailing" secondItem="CHv-Gf-YIf" secondAttribute="trailing" id="P9f-ps-p3a"/>
-                                            <constraint firstItem="ZZZ-k2-Ptq" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" constant="40" id="QLb-Rw-dEz"/>
                                             <constraint firstItem="LyP-eO-mSZ" firstAttribute="leading" secondItem="Z0P-6a-9L4" secondAttribute="leading" constant="24" id="QXV-iS-8Gr"/>
                                             <constraint firstItem="CGh-Kh-smo" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" id="Sr4-OG-U1u"/>
-                                            <constraint firstItem="uIP-Pl-4zW" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" constant="40" id="UXF-Pu-oiF"/>
+                                            <constraint firstItem="uIP-Pl-4zW" firstAttribute="top" secondItem="Z0P-6a-9L4" secondAttribute="top" constant="48" id="UXF-Pu-oiF"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZZZ-k2-Ptq" secondAttribute="trailing" constant="8" id="ih1-0l-HAk"/>
                                             <constraint firstItem="ywG-I7-2jm" firstAttribute="top" secondItem="tLT-Ue-HKl" secondAttribute="bottom" constant="8" id="kE5-g7-3tS"/>
                                             <constraint firstAttribute="trailing" secondItem="CGh-Kh-smo" secondAttribute="trailing" id="kyS-LU-yEi"/>
                                             <constraint firstItem="tLT-Ue-HKl" firstAttribute="top" secondItem="LyP-eO-mSZ" secondAttribute="bottom" id="n9j-oN-uRp"/>
@@ -632,7 +649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcI-YD-Jny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263.768115942029" y="3162.7232142857142"/>
+            <point key="canvasLocation" x="2270" y="3232"/>
         </scene>
         <!--Arsenal-->
         <scene sceneID="mKJ-Rp-GiP">
@@ -841,7 +858,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYk-R7-Wy5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3344.9275362318845" y="2898.8839285714284"/>
+            <point key="canvasLocation" x="3972" y="2769"/>
         </scene>
         <!--Favourits-->
         <scene sceneID="g7v-2G-xSl">
@@ -998,6 +1015,7 @@
         <image name="arrowtriangle.right.fill" catalog="system" width="64" height="56"/>
         <image name="arsenal" width="870" height="1024"/>
         <image name="arsenal kit" width="1238" height="1334"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="connection faild" width="1920" height="1920"/>
         <image name="green" width="1920" height="1080"/>
         <image name="heart" catalog="system" width="64" height="54"/>

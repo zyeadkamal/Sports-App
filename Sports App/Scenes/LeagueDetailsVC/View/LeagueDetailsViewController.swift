@@ -34,7 +34,7 @@ class LeagueDetailsViewController: UIViewController {
         
         leagueClubsCollectionView.delegate = self
         leagueClubsCollectionView.dataSource = self
-                
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,12 +44,15 @@ class LeagueDetailsViewController: UIViewController {
         configureUI()
         print("Flag = \(flag)")
     }
-
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func favouritButtonPressed(_ sender: UIButton) {
         
         switchBarButtonItem(button: sender)
-
+        
     }
     
     
@@ -67,7 +70,7 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     func switchBarButtonItem(button : UIButton ){
-    
+        
         //flag = !flag
         switch flag {
         case true:
@@ -200,7 +203,7 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             let desVC = self.storyboard?.instantiateViewController(identifier: "ClubDetailsViewController") as! ClubDetailsViewController
             let presenter = ClubDetailsPresenter(club: self.presenter?.getAllClubs(atIndex: indexPath) ?? Team())
             desVC.presenter = presenter
-            self.present(desVC, animated: true, completion: nil)
+            present(desVC, animated: true, completion: nil)
             break
         default:
             break

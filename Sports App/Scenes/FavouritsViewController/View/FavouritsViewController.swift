@@ -86,6 +86,7 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: self.presenter?.getLeagueAt(index: indexPath.row) ?? FavoriteLeague())
         destinationVC.presenter = presenter
+        destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)
     }
     
