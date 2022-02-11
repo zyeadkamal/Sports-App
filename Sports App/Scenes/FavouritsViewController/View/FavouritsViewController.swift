@@ -42,6 +42,29 @@ class FavouritsViewController: UIViewController {
         reloadCollectionView()
         print("m7maaaaaa")
     }
+    
+    func showAlert(){
+           
+           let alert = UIAlertController(title: "Sorry", message: "There is no YouTube link for this content", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+       }
+    
+    func openURL(_ urlString: String) {
+        
+        if urlString == "https://"{
+            showAlert()
+        }else{
+            guard let url = URL(string: urlString) else {return}
+            UIApplication.shared.open(url, completionHandler: { success in
+                if success {
+                    print("opened")
+                } else {
+                    print("failed")
+                }
+            })
+        }
+    }
 }
 
 
@@ -62,6 +85,9 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.layer.masksToBounds = false
         
         cell.configure(presenter?.getLeagueAt(index: indexPath.row) ?? FavoriteLeague())
+        cell.leagueVideoButtonPressed = {
+            self.openURL("https://\(self.presenter?.getLeagueAt(index: indexPath.row).strYoutube ?? "")")
+        }
         return cell
     }
     

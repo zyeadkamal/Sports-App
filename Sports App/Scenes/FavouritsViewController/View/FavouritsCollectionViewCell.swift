@@ -12,7 +12,7 @@ class FavouritsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var favouritsImage: UIImageView!
     @IBOutlet weak var favouritsLabel: UILabel!
-    
+    var leagueVideoButtonPressed : (() -> Void)?
     var cornerRadius: CGFloat = 15
     
     override func awakeFromNib() {
@@ -39,6 +39,10 @@ class FavouritsCollectionViewCell: UICollectionViewCell {
         ).cgPath
     }
     
+    @IBAction func youtubeButtonPressed(_ sender: UIButton) {
+        
+        leagueVideoButtonPressed?()
+    }
     func configure(_ obj : FavoriteLeague)
     {
         setLeagueImage(imgPath: obj.strBadge ?? "")
@@ -53,4 +57,5 @@ class FavouritsCollectionViewCell: UICollectionViewCell {
     {
         favouritsLabel.text = leagueName
     }
+   
 }
