@@ -33,12 +33,16 @@ class LeagueDetailsViewController: UIViewController {
         
         leagueClubsCollectionView.delegate = self
         leagueClubsCollectionView.dataSource = self
-        flag = presenter?.getFlag() ?? false
-        configureUI()
-        
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Flag = \(flag)")
+        flag = presenter?.getFlag() ?? false
+        configureUI()
+        print("Flag = \(flag)")
+    }
 
     
     @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
@@ -60,10 +64,8 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     func switchBarButtonItem(button : UIBarButtonItem ){
-        
-
-        
-        flag = !flag
+    
+        //flag = !flag
         switch flag {
         case true:
             presenter?.deleteFromDatabase(!flag)
@@ -75,6 +77,7 @@ class LeagueDetailsViewController: UIViewController {
             button.image = UIImage(systemName: "heart.fill")
             break
         }
+        flag = !flag
     }
     
     

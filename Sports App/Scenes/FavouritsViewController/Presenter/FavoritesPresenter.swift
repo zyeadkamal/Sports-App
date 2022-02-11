@@ -43,9 +43,11 @@ class FavoritesPresenter : FavoritesPresenterProtocol
         var ret : [FavoriteLeague] = []
         for obj in objArr
         {
-            let _strLeague = (obj.value(forKey: "strLeague") as! String)
-            let _strBadge  = (obj.value(forKey: "strBadge") as! String)
-            ret.append(FavoriteLeague(strLeague: _strLeague, strBadge: _strBadge))
+            let _strLeague  = (obj.value(forKey: "strLeague") as! String)
+            let _strBadge   = (obj.value(forKey: "strBadge") as! String)
+            let _strYoutube = (obj.value(forKey: "strYoutube") as! String)
+            let _isFavorite = (obj.value(forKey: "isFavorite") as! Bool)
+            ret.append(FavoriteLeague(strLeague: _strLeague, strBadge: _strBadge, strYoutube: _strYoutube, isFavorite: _isFavorite))
         }
         return ret
     }
