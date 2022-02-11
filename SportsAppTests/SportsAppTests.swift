@@ -10,7 +10,7 @@ import XCTest
 @testable import Sports_App
 
 class SportsAppTests: XCTestCase {
-
+    var networkManager = NetworkManager()
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,16 +19,37 @@ class SportsAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func testAllSportsFromURL() {
+        let expectaion = expectation(description: "Waiting for the API")
+        networkManager.request(fromEndpoint: .allSports, httpMethod: .post, parametrs: [:]) { [weak self] (result:Result<AllSportsResponse, Error>) in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.sports?.count, 34, "API Faild")
+                expectaion.fulfill()
+            case .failure(let error):
+                XCTFail()
+            }
         }
+        waitForExpectations(timeout: 5, handler: nil)
+        
+    }
+    
+    func testAllLeaguesFromURL() {
+        let expectaion = expectation(description: "Waiting for the API")
+        networkManager.request(fromEndpoint: EndPoint.allLeagues, httpMethod: .post, parametrs: ["s":"Soccer"]){ [weak self] (result:Result<AllLeagues, Error>) in
+            
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.countrys?.count, 10, "API Failed")
+                expectaion.fulfill()
+                break
+            case .failure(let error):
+                XCTFail()
+                break
+            }
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        
     }
 
 }
