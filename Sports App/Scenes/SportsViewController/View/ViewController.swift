@@ -11,6 +11,8 @@ import UIKit
 protocol SportsViewProtocol : AnyObject
 {
     func reloadCollectionView()
+    func showConnectionFaildImage()
+    func hideConnectionFaildImage()
 }
 class ViewController: UIViewController {
     
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
     
     //MARK:- Outlets
     @IBOutlet weak var sportsCollectionView: UICollectionView!
+    @IBOutlet weak var connectionFailedImage: UIImageView!
     
     
     //MARK:- Life Cycle
@@ -31,16 +34,31 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK:- Funcs
+
+   
+    
 }
 
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SportsViewProtocol{
+   
+    
     
     //MARK:- Confromed Functions
     func reloadCollectionView() {
         sportsCollectionView.reloadData()
     }
     
+    func showConnectionFaildImage() {
+        self.sportsCollectionView.isHidden = true
+        self.connectionFailedImage.isHidden = false
+
+    }
+    func hideConnectionFaildImage() {
+        self.sportsCollectionView.isHidden = false
+        self.connectionFailedImage.isHidden = true
+    }
     
     //MARK:- Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

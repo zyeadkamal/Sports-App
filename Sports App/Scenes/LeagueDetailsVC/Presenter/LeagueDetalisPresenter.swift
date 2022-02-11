@@ -117,7 +117,7 @@ extension LeagueDetalisPresenter: LeagueDetalisPresenterProtocol {
     func deleteFromDatabase(_ _flag : Bool)
     {
         APIKey.isFavorite = _flag
-        guard let objToBeDeleted = dbService?.query(APIKey.strLeague ?? "") else { print ("m3lsh"); return }
+        guard let objToBeDeleted = dbService?.query(APIKey.strLeague ?? "") else { print ("Not Found"); return }
         dbService?.erase(objToBeDeleted)
     }
     

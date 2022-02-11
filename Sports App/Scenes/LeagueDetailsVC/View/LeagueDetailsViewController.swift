@@ -11,6 +11,7 @@ import Kingfisher
 
 class LeagueDetailsViewController: UIViewController {
     
+    @IBOutlet weak var favouritButton: UIButton!
     @IBOutlet weak var liveMatchesCollectionView: UICollectionView!
     
     @IBOutlet weak var nextMatchesCollectionView: UICollectionView!
@@ -33,48 +34,53 @@ class LeagueDetailsViewController: UIViewController {
         
         leagueClubsCollectionView.delegate = self
         leagueClubsCollectionView.dataSource = self
+                
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Flag = \(flag)")
         flag = presenter?.getFlag() ?? false
         configureUI()
-        
-        
+        print("Flag = \(flag)")
     }
-    
 
     
-    @IBAction func favouritButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func favouritButtonPressed(_ sender: UIButton) {
         
         switchBarButtonItem(button: sender)
-        
+
     }
+    
+    
     
     func configureUI()
     {
         if (flag)
         {
-            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+            favouritButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
         else
         {
-            self.navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+            favouritButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
-    func switchBarButtonItem(button : UIBarButtonItem ){
-        
-
-        
-        flag = !flag
+    func switchBarButtonItem(button : UIButton ){
+    
+        //flag = !flag
         switch flag {
         case true:
             presenter?.deleteFromDatabase(!flag)
-            button.image = UIImage(systemName: "heart")
+            favouritButton.setImage(UIImage(systemName: "heart"), for: .normal)
             break
         case false:
             
             presenter?.addToDatabase(!flag)
-            button.image = UIImage(systemName: "heart.fill")
+            favouritButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             break
         }
+        flag = !flag
     }
     
     
@@ -147,8 +153,6 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
         default:
             return UICollectionViewCell()
         }
-        
-        
     }
     
     
@@ -182,7 +186,6 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             return 1
             
         }
-        
     }
     
     
@@ -197,7 +200,7 @@ extension LeagueDetailsViewController : UICollectionViewDelegate,UICollectionVie
             let desVC = self.storyboard?.instantiateViewController(identifier: "ClubDetailsViewController") as! ClubDetailsViewController
             let presenter = ClubDetailsPresenter(club: self.presenter?.getAllClubs(atIndex: indexPath) ?? Team())
             desVC.presenter = presenter
-            self.navigationController?.pushViewController(desVC, animated: true)
+            self.present(desVC, animated: true, completion: nil)
             break
         default:
             break
@@ -219,5 +222,4 @@ extension LeagueDetailsViewController : LeagueDetailsViewToLeagueDetailsPresente
     func reloadleagueClubsCollectionView() {
         self.leagueClubsCollectionView.reloadData()
     }
-    
 }

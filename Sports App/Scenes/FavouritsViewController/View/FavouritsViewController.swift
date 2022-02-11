@@ -33,11 +33,14 @@ class FavouritsViewController: UIViewController {
         favouritsCollectionView.dataSource = self
         //presenter = FavoritesPresenter(view : self)
         //reloadCollectionView()
+        print("m7maaaaaa")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         presenter = FavoritesPresenter(view : self)
         reloadCollectionView()
+        print("m7maaaaaa")
     }
 }
 
@@ -78,7 +81,13 @@ extension FavouritsViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destinationVC = self.storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        
+        let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: self.presenter?.getLeagueAt(index: indexPath.row) ?? FavoriteLeague())
+        destinationVC.presenter = presenter
+        self.present(destinationVC, animated: true, completion: nil)
+    }
     
     func reloadCollectionView()
     {

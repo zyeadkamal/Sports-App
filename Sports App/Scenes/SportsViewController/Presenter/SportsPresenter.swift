@@ -15,18 +15,18 @@ protocol SportsPresenterProtocol {
     func setAPIKey(index : IndexPath) -> String
     func getAllSports()
 }
+
 class SportsPresenter : SportsPresenterProtocol
 {
     
     //MARK:- Variables
     var sports : [Sport] = []
     weak var view   : SportsViewProtocol?
-    //var leaguesPresenter = LeaguePresenter(view: <#ViewToPresenterDelegate#>)
     
     init(view : SportsViewProtocol)
     {
         self.view = view
-        getAllSports()
+        testConnection()
     }
     
     func getSportsCount() -> Int {
@@ -52,5 +52,14 @@ class SportsPresenter : SportsPresenterProtocol
     
     func setAPIKey(index: IndexPath)-> String {
         return sports[index.row].strSport ?? ""
+    }
+    
+    func testConnection() {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            view?.hideConnectionFaildImage()
+            getAllSports()
+        }else{
+            view?.showConnectionFaildImage()
+        }
     }
 }

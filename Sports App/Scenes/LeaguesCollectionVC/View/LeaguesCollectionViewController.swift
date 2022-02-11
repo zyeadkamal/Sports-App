@@ -92,7 +92,7 @@ class LeaguesCollectionViewController: UICollectionViewController , UICollection
         let leagueToBeSent = FavoriteLeague(strLeague: tmpObject.strLeague, strBadge: tmpObject.strBadge, strYoutube: tmpObject.strYoutube, isFavorite: presenter?.getFlag(tmpObject.strLeague ?? ""))
         let presenter = LeagueDetalisPresenter(view: destinationVC, APIKey: leagueToBeSent)
         destinationVC.presenter = presenter
-        self.navigationController?.pushViewController(destinationVC, animated: true)
+        self.present(destinationVC, animated: true, completion: nil)
         
     }
     
